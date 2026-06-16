@@ -1,0 +1,30 @@
+{
+  "name": "deepfocus-learn",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "DeepFocus Learn / حصن التركيز — an oral-study tutor that locks you into deep focus, transcribes your recitation, highlights mistakes against a reference, and turns weak points into flashcards.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "motion": "^12.40.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^4.5.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "gh-pages": "^6.3.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}

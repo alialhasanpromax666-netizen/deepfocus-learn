@@ -1,0 +1,168 @@
+/* Landing page — redesigned with Swiss + taste-skill principles.
+   RTL-first; logical properties throughout. */
+
+.landing{height:100%;overflow-y:auto;overflow-x:hidden;background:var(--ink);background-image:var(--grad-hero);background-repeat:no-repeat}
+
+.landing-inner{max-width:1120px;margin:0 auto;padding:0 clamp(18px,5vw,40px)}
+
+/* ---------- Nav ---------- */
+.lnav{position:sticky;top:0;z-index:20;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  background:rgba(14,12,10,0.78);border-bottom:1px solid var(--glass-line)}
+.lnav-row{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem;letter-spacing:-0.02em;color:var(--text)}
+.brand-mark{width:28px;height:28px;flex-shrink:0;color:var(--focus)}
+.lnav-links{display:flex;align-items:center;gap:24px}
+.lnav-links a{color:var(--text-dim);font-weight:500;font-size:0.9rem;transition:color 0.2s}
+.lnav-links a:hover{color:var(--text)}
+@media(max-width:720px){.lnav-links .hide-sm{display:none}}
+
+.cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 24px;border-radius:var(--radius-pill);font-weight:600;
+  font-size:0.95rem;background:var(--focus);color:#0E0C0A;
+  border:1px solid transparent;cursor:pointer;
+  transition:transform 0.15s ease,box-shadow 0.25s ease,background 0.2s;
+  box-shadow:0 6px 24px rgba(196,148,80,0.18)
+}
+.cta:hover{background:#D4A15D;transform:translateY(-2px);box-shadow:0 10px 32px rgba(196,148,80,0.25)}
+.cta:active{transform:translateY(0)}
+.cta-ghost{background:transparent;color:var(--text);border:1px solid var(--glass-line);box-shadow:none}
+.cta-ghost:hover{background:var(--glass);border-color:var(--line-2);box-shadow:none}
+.cta-sm{padding:8px 16px;font-size:0.85rem}
+
+/* ---------- Hero — split layout ---------- */
+.hero{
+  display:grid;grid-template-columns:1.15fr 0.85fr;gap:clamp(24px,5vw,56px);
+  align-items:center;padding:clamp(40px,7vw,80px) 0 clamp(32px,5vw,56px);
+  min-height:min(100dvh,720px)
+}
+@media(max-width:880px){
+  .hero{grid-template-columns:1fr;text-align:center;min-height:auto}
+  .hero-art{order:-1;justify-self:center}
+}
+.hero-content{max-width:520px}
+@media(max-width:880px){.hero-content{margin:0 auto}}
+
+.hero-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 14px;border-radius:var(--radius-pill);
+  background:var(--focus-soft);color:var(--focus);
+  border:1px solid rgba(196,148,80,0.15);
+  font-weight:600;font-size:0.8rem;letter-spacing:0.02em;margin-bottom:16px
+}
+
+.hero h1{
+  font-size:clamp(2rem,5vw,3.4rem);line-height:1.12;font-weight:700;
+  margin:0 0 14px;letter-spacing:-0.02em
+}
+.hero h1 .accent{color:var(--focus)}
+
+.hero-sub{
+  font-size:clamp(0.95rem,2vw,1.15rem);color:var(--text-dim);
+  line-height:1.85;max-width:45ch
+}
+@media(max-width:880px){.hero-sub{margin-inline:auto}}
+
+.hero-actions{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+@media(max-width:880px){.hero-actions{justify-content:center}}
+
+.hero-note{margin-top:14px;color:var(--text-faint);font-size:0.8rem}
+
+/* ---------- Section shared ---------- */
+.section{padding:clamp(48px,8vw,96px) 0}
+.section-head{max-width:600px;margin:0 auto clamp(24px,4vw,40px)}
+.section-head h2{
+  font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;line-height:1.25;
+  letter-spacing:-0.02em;margin-bottom:8px
+}
+.section-head p{color:var(--text-dim);font-size:0.98rem;line-height:1.75;max-width:50ch}
+
+/* ---------- Asymmetric grid (problem cards) ---------- */
+.asym-grid{
+  display:grid;grid-template-columns:1.2fr 0.8fr 0.8fr;
+  gap:clamp(12px,2vw,16px)
+}
+.asym-grid .card-wide{grid-column:1/2}
+.asym-grid .card-tall{grid-column:2/4;display:flex;flex-direction:column;justify-content:center}
+@media(max-width:860px){
+  .asym-grid{grid-template-columns:1fr}
+  .asym-grid .card-wide,.asym-grid .card-tall{grid-column:1/2}
+}
+@media(max-width:860px){
+  .asym-grid{grid-template-columns:1fr}
+  .asym-grid .card-wide,.asym-grid .card-tall{grid-column:1/2}
+}
+
+/* ---------- Feature grid (3-col) ---------- */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.5vw,14px)}
+@media(max-width:860px){.feat-grid{grid-template-columns:1fr}}
+
+/* ---------- Cards ---------- */
+.lcard{
+  background:var(--glass);border:1px solid var(--glass-line);
+  border-radius:var(--radius);padding:24px;
+  transition:transform 0.25s ease,border-color 0.25s ease,background 0.25s
+}
+.lcard:hover{transform:translateY(-3px);border-color:var(--focus-soft);background:var(--focus-soft)}
+.lcard .ic{
+  width:42px;height:42px;border-radius:var(--radius-sm);
+  display:grid;place-items:center;font-size:20px;
+  background:var(--calm);border:1px solid var(--line);margin-bottom:14px
+}
+.lcard h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+.lcard p{color:var(--text-dim);line-height:1.75;font-size:0.9rem}
+.lcard-wide{border-color:var(--focus-soft);background:var(--focus-soft);padding:28px}
+.lcard-wide .ic{background:var(--focus);color:#0E0C0A;border-color:transparent}
+.lcard-wide h3{font-size:1.1rem}
+
+/* ---------- Steps (how it works) ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,18px)}
+@media(max-width:860px){.steps{grid-template-columns:1fr}}
+.step{position:relative;padding:28px 24px 24px;background:var(--glass);border:1px solid var(--glass-line);border-radius:var(--radius)}
+.step .num{
+  width:40px;height:40px;border-radius:50%;
+  display:grid;place-items:center;font-weight:700;
+  font-size:1rem;color:var(--focus);background:var(--focus-soft);
+  border:1px solid rgba(196,148,80,0.2);margin-bottom:14px
+}
+.step h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+.step p{color:var(--text-dim);line-height:1.75;font-size:0.9rem}
+
+/* ---------- Value banner ---------- */
+.value{text-align:center;background:linear-gradient(135deg,rgba(196,148,80,0.06),rgba(196,148,80,0.02));
+  border:1px solid var(--glass-line);border-radius:var(--radius);padding:clamp(28px,5vw,48px)}
+.value .eq{font-size:clamp(1.1rem,3vw,1.7rem);font-weight:700;line-height:1.6}
+.value .eq .plus{color:var(--text-faint);font-weight:400;margin:0 6px}
+.value .eq .res{color:var(--focus)}
+
+/* ---------- Final CTA ---------- */
+.final{text-align:center;padding:clamp(48px,8vw,96px) 0}
+.final h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;margin-bottom:10px}
+.final p{color:var(--text-dim);font-size:1rem;margin-bottom:24px}
+
+/* ---------- Footer ---------- */
+.lfooter{border-top:1px solid var(--glass-line);padding:24px 0;
+  color:var(--text-faint);font-size:0.85rem;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+
+/* ---------- Device mockup ---------- */
+.device{width:min(320px,90vw);border-radius:32px;padding:12px;
+  background:linear-gradient(160deg,#1E1A16,#0E0C0A);
+  border:1px solid var(--glass-line);box-shadow:var(--shadow-lg),0 0 60px var(--focus-glow)}
+.device-screen{background:var(--ink);border-radius:20px;padding:16px 14px 20px;border:1px solid var(--line)}
+.device-top{display:flex;align-items:center;justify-content:space-between;color:var(--text-dim);font-size:0.78rem;margin-bottom:12px}
+.device-time{font-family:var(--font-mono);font-size:1.8rem;font-weight:500;text-align:center;margin-bottom:2px;color:var(--text)}
+.device-acc{text-align:center;color:var(--focus);font-weight:600;font-size:0.82rem;margin-bottom:14px}
+.device-tr{font-size:0.95rem;line-height:2.1;min-height:100px;
+  background:var(--ink-2);border:1px solid var(--line);
+  border-radius:var(--radius-sm);padding:10px 12px}
+.w-ok{color:var(--focus)}
+.w-bad{color:var(--error);background:var(--error-soft);border-radius:3px;padding:0 2px;text-decoration:underline wavy var(--error);text-underline-offset:4px}
+.w-skip{color:var(--text-faint);text-decoration:line-through;opacity:0.6}
+.device-mic{width:58px;height:58px;border-radius:50%;margin:16px auto 0;
+  display:grid;place-items:center;font-size:22px;color:#0E0C0A;background:var(--focus);animation:pulse-ring 2.5s infinite}
+
+/* ---------- Reveal (IntersectionObserver) ---------- */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.55s ease,transform 0.55s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.device-mic{animation:none}}

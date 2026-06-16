@@ -1,0 +1,46 @@
+:root {
+  /* Fortress of Focus — premium warm-dark palette */
+  --ink:      #0E0C0A;
+  --ink-2:    #161310;
+  --calm:     #1E1A16;
+  --calm-2:   #28231E;
+  --line:     rgba(212,161,93,0.08);
+  --line-2:   rgba(212,161,93,0.14);
+
+  /* Text hierarchy via opacity — Swiss principle */
+  --text:     #EAE0D4;
+  --text-dim: rgba(234,224,212,0.60);
+  --text-faint: rgba(234,224,212,0.25);
+
+  /* Accent: warm gold (focus / achievement / value) */
+  --focus:    #C49450;
+  --focus-soft: rgba(196,148,80,0.12);
+  --focus-glow: rgba(196,148,80,0.06);
+
+  --error:    #D64A4A;
+  --error-soft: rgba(214,74,74,0.12);
+  --warn:     #D4A15D;
+  --warn-soft: rgba(212,161,93,0.12);
+  --accent:   #C49450;
+
+  /* Radii — all-soft system (cards 16px, buttons pill) */
+  --radius-sm: 8px;
+  --radius:    16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+
+  /* Shadow — tinted to background */
+  --shadow: 0 8px 32px rgba(0,0,0,0.5);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.55);
+
+  /* Landing-specific */
+  --grad-hero: radial-gradient(1000px 600px at 80% -5%, rgba(196,148,80,0.08), transparent 60%),
+               radial-gradient(800px 500px at 0% 10%, rgba(196,148,80,0.04), transparent 55%);
+  --glass: rgba(255,255,255,0.02);
+  --glass-line: rgba(212,161,93,0.06);
+
+  /* Font stack — Cairo for both Arabic and Latin */
+  --font-ar:  'Cairo', 'Tajawal', 'Geeza Pro', system-ui, sans-serif;
+  --font-en:  'Cairo', 'Outfit', 'IBM Plex Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
+}
